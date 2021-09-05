@@ -1,0 +1,32 @@
+import pandas as pd
+import numpy as np
+import seaborn as sns
+import sklearn as skt
+
+df = pd.read_csv('car data.csv')
+df
+df.head()
+
+df.shape
+df.size
+print(df['Seller_Type'].unique())
+print(df['Transmission'].unique())
+print(df['Fuel_Type'].unique())
+print(df['Owner'].unique())
+df
+
+## check the missing and null value
+df.isnull().sum()
+df.describe()
+df.columns
+final_dataset=df[['Year','Selling_Price','Present_Price','Kms_Driven','Fuel_Type','Seller_Type','Transmission','Owner']]
+
+final_dataset.head()
+
+final_dataset
+
+final_dataset['Current_year'] = 2021
+final_dataset.head()
+final_dataset['no_year']=final_dataset['Current_year']-final_dataset['Year']
+final_dataset
+
